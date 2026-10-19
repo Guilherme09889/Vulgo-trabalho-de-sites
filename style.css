@@ -1,0 +1,174 @@
+:root {
+    --fundo-pagina: #0d1117;
+    --fundo-card: #161b22;
+    --fundo-barra: #1b2230;
+    --borda: #2a3242;
+    --texto: #e6edf3;
+    --texto-suave: #8b96a8;
+
+    /* secundárias */
+    --amarelo: #f2c14e;
+    --amarelo-fundo: rgba(242, 193, 78, 0.12);
+    --verde: #3fd68a;
+    --verde-fundo: rgba(63, 214, 138, 0.12);
+    --azul: #58a6ff;
+    --azul-fundo: rgba(88, 166, 255, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: var(--fundo-pagina);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--texto);
+}
+
+.janela {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+/* faixa decorativa atrás do card */
+.janela::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 28px;
+    bottom: -10px;
+    width: 26px;
+    border-radius: 0 14px 14px 0;
+    background: linear-gradient(180deg, var(--azul), var(--verde));
+    z-index: -1;
+}
+
+/* ---------- barra de título ---------- */
+.barra-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: var(--fundo-barra);
+    border-bottom: 1px solid var(--borda);
+    border-radius: 14px 14px 0 0;
+}
+
+.semaforo {
+    display: flex;
+    gap: 6px;
+}
+
+.bolinha {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.vermelha { background: var(--amarelo); }
+.amarela  { background: var(--verde); }
+.verde    { background: var(--azul); }
+
+.titulo {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto);
+}
+
+.menu {
+    display: flex;
+    gap: 4px;
+}
+
+.menu span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--texto-suave);
+}
+
+/* ---------- conteúdo ---------- */
+.conteudo {
+    padding: 22px 20px 24px;
+}
+
+.bloco {
+    margin-bottom: 22px;
+}
+
+.rotulo {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    margin-bottom: 12px;
+}
+
+.lista-valores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.valor {
+    padding: 9px 14px;
+    background: var(--azul-fundo);
+    border: 1px solid var(--azul);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--azul);
+}
+
+.linha-operacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.valor.novo {
+    background: var(--verde-fundo);
+    border-color: var(--verde);
+    color: var(--verde);
+}
+
+.nota {
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+/* ---------- histórico ---------- */
+.historico {
+    padding: 16px 18px;
+    background: var(--amarelo-fundo);
+    border: 1px solid var(--borda);
+    border-left: 3px solid var(--amarelo);
+    border-radius: 10px;
+}
+
+.historico-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--amarelo);
+    margin-bottom: 8px;
+}
+
+.historico-texto {
+    font-size: 12.5px;
+    color: var(--texto-suave);
+}
