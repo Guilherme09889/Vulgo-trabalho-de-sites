@@ -25,29 +25,82 @@
         <main class="conteudo">
             <section class="bloco">
                 <h2 class="rotulo">Array principal · valores em reais</h2>
-                <ul class="lista-valores">
-                    <li class="valor">R$ 5,00</li>
-                    <li class="valor">R$ 12,00</li>
-                    <li class="valor">R$ 18,00</li>
-                    <li class="valor">R$ 25,00</li>
-                </ul>
+                <ul class="lista-valores" id="lista-valores"></ul>
             </section>
 
             <section class="bloco">
                 <h2 class="rotulo">Nova operação</h2>
-                <div class="linha-operacao">
-                    <span class="valor novo">+ R$ 50,00</span>
-                    <span class="nota">&#8627; novo valor no final</span>
-                </div>
+                <form class="linha-operacao" id="form-operacao" novalidate>
+                    <input class="campo" id="campo-valor" type="number" step="0.01" min="0.01" placeholder="Ex.: 50,00" aria-label="Novo valor em reais">
+                    <button class="botao" type="submit">push()</button>
+                    <span class="nota" id="nota">&#8627; novo valor no final</span>
+                </form>
             </section>
 
             <section class="historico">
                 <h3 class="historico-titulo">Histórico salvo</h3>
-                <p class="historico-texto">
-                    15/10/2026 • 14:30 &nbsp; push() &rarr; R$ 50,00 adicionado
-                </p>
+                <ul class="historico-lista" id="historico-lista"></ul>
+            </section>
+
+            <section class="bloco">
+                <h2 class="rotulo">Laboratório do filter()</h2>
+                <form class="linha-operacao" id="form-filtro" novalidate>
+                    <select class="campo" id="faixa-filtro" aria-label="Faixa de valores">
+                        <option value="menor">Menor que R$ 10</option>
+                        <option value="entre">De R$ 10 a R$ 20</option>
+                        <option value="maior">Maior que R$ 20</option>
+                    </select>
+                    <button class="botao" type="submit">Filtrar valores</button>
+                </form>
+                <p class="nota" id="nota-filtro">O array principal não é alterado.</p>
+                <ul class="lista-valores" id="resultado-filtro"></ul>
+            </section>
+
+            <section class="historico">
+                <h3 class="historico-titulo">Histórico do filter()</h3>
+                <ul class="historico-lista" id="historico-filtro"></ul>
+                <button class="botao" type="button" id="limpar-filtro">Limpar histórico</button>
+            </section>
+
+            <section class="bloco">
+                <h2 class="rotulo">Laboratório do map()</h2>
+                <form class="linha-operacao" id="form-map" novalidate>
+                    <select class="campo" id="tipo-map" aria-label="Tipo de transformação">
+                        <option value="dolar">Dólar (USD)</option>
+                        <option value="euro">Euro (EUR)</option>
+                        <option value="emoji">Emoji 💰</option>
+                    </select>
+                    <button class="botao" type="submit">Transformar valores</button>
+                </form>
+                <p class="nota">Cotações didáticas: US$ 1,00 = R$ 5,00 · € 1,00 = R$ 6,00. O array principal não é alterado.</p>
+                <ul class="lista-valores" id="resultado-map"></ul>
+            </section>
+
+            <section class="historico">
+                <h3 class="historico-titulo">Histórico do map()</h3>
+                <ul class="historico-lista" id="historico-map"></ul>
+                <button class="botao" type="button" id="limpar-map">Limpar histórico</button>
+            </section>
+
+            <section class="bloco">
+                <h2 class="rotulo">Laboratório do splice()</h2>
+                <ul class="lista-valores" id="lista-indices"></ul>
+                <form class="linha-operacao" id="form-splice" novalidate>
+                    <input class="campo" id="campo-indice" type="number" step="1" min="0" placeholder="Índice" aria-label="Índice inicial">
+                    <input class="campo" id="campo-quantidade" type="number" step="1" min="1" placeholder="Quantidade" aria-label="Quantidade a remover">
+                    <button class="botao" type="submit">Executar splice()</button>
+                </form>
+                <p class="nota" id="nota-splice">O splice() altera o array principal.</p>
+                <ul class="lista-valores" id="removidos-splice"></ul>
+            </section>
+
+            <section class="historico">
+                <h3 class="historico-titulo">Histórico do splice()</h3>
+                <ul class="historico-lista" id="historico-splice"></ul>
+                <button class="botao" type="button" id="limpar-splice">Limpar histórico</button>
             </section>
         </main>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
